@@ -1,0 +1,280 @@
+
+ MySQL  localhost:33060+ ssl  SQL > use seriesdb1;
+Default schema set to `seriesdb1`.
+Fetching table and column names from `seriesdb1` for auto-completion... Press ^C to stop.
+
+Query OK, 0 rows affected (0.4788 sec)
+
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > create table genre(id INT NOT NULL AUTO_INCREMENT ,NAME VARCHAR (256) NOT NULL,PRIMARY KEY(id));
+Query OK, 0 rows affected (1.6839 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > create table country (id INT NOT NULL AUTO_INCREMENT,NAME VARCHAR(256) NOT NULL,PRIMARY KEY(id));
+Query OK, 0 rows affected (0.3564 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into genre(name)values('comedy');
+Query OK, 1 row affected (0.4489 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into genre(name)values('comedy');
+Query OK, 1 row affected (0.0847 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > indert into genre(name)values('horror');
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'indert into genre(name)values('horror')' at line 1
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into genre(name)values('horror');
+Query OK, 1 row affected (0.0971 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into genre (name)values('action');
+Query OK, 1 row affected (0.0860 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe genre;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| NAME  | varchar(256) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.1557 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select*from genre;
++----+--------+
+| id | NAME   |
++----+--------+
+|  1 | comedy |
+|  2 | comedy |
+|  3 | horror |
+|  4 | action |
++----+--------+
+4 rows in set (0.0231 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into director(name)values('dr ross geller');
+Query OK, 1 row affected (0.2591 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into director(name)values('robert altman');
+Query OK, 1 row affected (0.0837 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into director (name)values('norman milton');
+Query OK, 1 row affected (0.1486 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into director (name)values('ted demme');
+Query OK, 1 row affected (0.0722 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe director;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| NAME  | varchar(256) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.1580 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into country(name)values('american');
+Query OK, 1 row affected (0.3055 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into country (name)values('india');
+Query OK, 1 row affected (0.0970 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into country (name) values('USA');
+Query OK, 1 row affected (0.0632 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into country (name) values('USA');
+Query OK, 1 row affected (0.1318 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > Describe country;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| NAME  | varchar(256) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.1540 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > create table yor(id INT NOT NULL AUTO_INCREMENT,DATE DATE NOT NULL,PRIMARY KEY(id) );
+Query OK, 0 rows affected (1.4878 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > create table yoe(id INT NOT NULL AUTO_INCREMENT ,DATE DATE NOT NULL,PRIMARY KEY(ID));
+Query OK, 0 rows affected (1.1037 sec)
+MySQL  localhost:33060+ ssl  seriesdb1  SQL > Select*from director;
++----+----------------+
+| id | NAME           |
++----+----------------+
+|  1 | dr ross geller |
+|  2 | robert altman  |
+|  3 | norman milton  |
+|  4 | ted demme      |
++----+----------------+
+4 rows in set (0.0084 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select*from genre;
++----+--------+
+| id | NAME   |
++----+--------+
+|  1 | comedy |
+|  2 | comedy |
+|  3 | horror |
+|  4 | action |
++----+--------+
+4 rows in set (0.0209 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select*from country;
++----+----------+
+| id | NAME     |
++----+----------+
+|  1 | american |
+|  2 | india    |
+|  3 | USA      |
+|  4 | USA      |
++----+----------+
+MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe series3;
++----------+------+------+-----+---------+----------------+
+| Field    | Type | Null | Key | Default | Extra          |
++----------+------+------+-----+---------+----------------+
+| id       | int  | NO   | PRI | NULL    | auto_increment |
+| SERVER2  | int  | NO   |     | NULL    |                |
+| DIRECTOR | int  | NO   |     | NULL    |                |
+| COUNTRY  | int  | NO   |     | NULL    |                |
++----------+------+------+-----+---------+----------------+
+
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > create table series5(id INT NOT NULL AUTO_INCREMENT ,SERIES1 INT NOT NULL,DIRECTOR INT NULL,COUNTRY INT NOT NULL,GENRE INT NOT NULL,PRIMARY KEY(id));
+Query OK, 0 rows affected (2.1810 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into series5(series1,director,genre,country)values(2,4,1,4);
+Query OK, 1 row affected (0.1051 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into series5(series1,director,genre,country)values(3,1,4,2);
+Query OK, 1 row affected (0.1887 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into series5 (series1 ,director ,genre,country)values(2,4,3,1);
+Query OK, 1 row affected (0.0926 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into series5(series1,director,genre,country)values(3,4,1,2);
+Query OK, 1 row affected (0.1033 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select* from series5;
++----+---------+----------+---------+-------+
+| id | SERIES1 | DIRECTOR | COUNTRY | GENRE |
++----+---------+----------+---------+-------+
+|  1 |       2 |        4 |       4 |     1 |
+|  2 |       3 |        1 |       2 |     4 |
+|  3 |       2 |        4 |       1 |     3 |
+|  4 |       3 |        4 |       2 |     1 |
++----+---------+----------+---------+-------+
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select* from series1;
++----+-------------------+
+| id | NAME              |
++----+-------------------+
+|  1 | friends           |
+|  2 | all in the family |
+|  3 | vampire diary     |
+|  4 | ted demme         |
++----+-------------------+
+> select series5.id as id,series1.name as series1,genre.name as genre,country.name as country,director.name as director from series5 inner join series1 on series5.series1=series1.id join director on series5.director=director.id join country on series5.country=country.id join genre on series5.genre=genre.id;
++----+-------------------+--------+----------+----------------+
+| id | series1           | genre  | country  | director       |
++----+-------------------+--------+----------+----------------+
+|  1 | all in the family | comedy | USA      | ted demme      |
+|  2 | vampire diary     | action | india    | dr ross geller |
+|  3 | all in the family | horror | american | ted demme      |
+|  4 | vampire diary     | comedy | india    | ted demme      |
++----+-------------------+--------+----------+----------------+
+ry OK, 0 rows affected (6.1264 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe yor;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | NO   | PRI | NULL    |       |
+| date  | date | NO   |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.3268 sec)
+ry OK, 0 rows affected (6.1264 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe yor;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | NO   | PRI | NULL    |       |
+| date  | date | NO   |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.3268 sec)
+alhost:33060+ ssl  seriesdb1  SQL > delete from yor where id='2';
+Query OK, 1 row affected (0.1834 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into yor(date,id) values ('1994-7-16',1);
+Query OK, 1 row affected (0.1054 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into yor(date,id) values ('1927-01-12',2);
+Query OK, 1 row affected (0.1511 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into yor(date,id) values ('2009-09-10',3);
+Query OK, 1 row affected (0.0727 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > insert into yor(date,id) values ('1999-09-16',4);
+Query OK, 1 row affected (0.1018 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select* from yor;
++----+------------+
+| id | date       |
++----+------------+
+|  1 | 1994-07-16 |
+|  2 | 1927-01-12 |
+|  3 | 2009-09-10 |
+|  4 | 1999-09-16 |
++----+------------+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select*from series1;
++----+-------------------+-------+---------+--------+-----+-----+
+| id | NAME              | genre | country | status | yor | yoe |
++----+-------------------+-------+---------+--------+-----+-----+
+|  1 | friends           |  NULL |    NULL |      7 |   1 |   1 |
+|  2 | all in the family |  NULL |    NULL |      4 |   2 |   2 |
+|  3 | vampire diary     |  NULL |    NULL |      2 |   3 |   3 |
+|  4 | ted demme         |  NULL |    NULL |      3 |   4 |   4 |
+|  5 | Tag               |     2 |       2 |      9 |   5 |   5 |
+|  6 | outrage           |     4 |       4 |     11 |   6 |   6 |
+|  7 | outrage           |     4 |       4 |      8 |   7 |   7 |
+|  8 | Tag               |     2 |       2 |      4 |   8 |   8 |
+|  9 | all in the family |     2 |       2 |      2 |   9 |   9 |
+| 10 | friends           |     2 |       2 |      2 |  10 |  10 |
+| 11 | vampire diary     |     3 |       3 |      7 |  11 |  11 |
++----+-------------------+-------+---------+--------+-----+-----+
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe series;
+ERROR: 1146: Table 'seriesdb1.series' doesn't exist
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > describe series1;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| id      | int          | NO   | PRI | NULL    | auto_increment |
+| NAME    | varchar(256) | NO   |     | NULL    |                |
+| genre   | int          | YES  |     | NULL    |                |
+| country | int          | YES  |     | NULL    |                |
+| status  | int          | YES  |     | NULL    |                |
+| yor     | int          | YES  |     | NULL    |                |
+| yoe     | int          | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+7 rows in set (0.0193 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > show tables;
++---------------------+
+| Tables_in_seriesdb1 |
++---------------------+
+| country             |
+| director            |
+| genre               |
+| series1             |
+| series5             |
+| ye                |
+| yoe                 |
+| yor                 |
++---------------------+
+8 rows in set (0.1516 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select* from series1;
++----+-------------------+-------+---------+--------+-----+-----+
+| id | NAME              | genre | country | status | yor | yoe |
++----+-------------------+-------+---------+--------+-----+-----+
+|  1 | friends           |  NULL |    NULL |      7 |   1 |   1 |
+|  2 | all in the family |  NULL |    NULL |      4 |   2 |   2 |
+|  3 | vampire diary     |  NULL |    NULL |      2 |   3 |   3 |
+|  4 | ted demme         |  NULL |    NULL |      3 |   4 |   4 |
+|  5 | Tag               |     2 |       2 |      9 |   5 |   5 |
+|  6 | outrage           |     4 |       4 |     11 |   6 |   6 |
+|  7 | outrage           |     4 |       4 |      8 |   7 |   7 |
+|  8 | Tag               |     2 |       2 |      4 |   8 |   8 |
+|  9 | all in the family |     2 |       2 |      2 |   9 |   9 |
+| 10 | friends           |     2 |       2 |      2 |  10 |  10 |
+| 11 | vampire diary     |     3 |       3 |      7 |  11 |  11 |
++----+-------------------+-------+---------+--------+-----+-----+
+11 rows in set (0.0231 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select*from series5;
++----+---------+----------+---------+-------+
+| id | SERIES1 | DIRECTOR | COUNTRY | GENRE |
++----+---------+----------+---------+-------+
+|  1 |       2 |        1 |       1 |     1 |
+|  2 |       3 |        2 |       2 |     2 |
+|  3 |       2 |        3 |       3 |     3 |
+|  4 |       3 |        4 |       4 |     4 |
++----+---------+----------+
+QL  localhost:33060+ ssl  seriesdb1  SQL > describe series5;
++----------+------+------+-----+---------+----------------+
+| Field    | Type | Null | Key | Default | Extra          |
++----------+------+------+-----+---------+----------------+
+| id       | int  | NO   | PRI | NULL    | auto_increment |
+| SERIES1  | int  | NO   |     | NULL    |                |
+| DIRECTOR | int  | YES  |     | NULL    |                |
+| COUNTRY  | int  | NO   |     | NULL    |                |
+| GENRE    | int  | NO   |     | NULL    |                |
++----------+------+------+-----+---------+----------------+
+5 rows in set (0.0195 sec)
+ MySQL  localhost:33060+ ssl  seriesdb1  SQL > select*from series5;
++----+---------+----------+---------+-------+
+| id | SERIES1 | DIRECTOR | COUNTRY | GENRE |
++----+---------+----------+---------+-------+
+|  1 |       2 |        1 |       1 |     1 |
+|  2 |       3 |        2 |       2 |     2 |
+|  3 |       2 |        3 |       3 |     3 |
+|  4 |       3 |        4 |       4 |     4 |
++----+---------+----------+---------+-------+
